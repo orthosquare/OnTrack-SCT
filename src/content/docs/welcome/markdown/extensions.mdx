@@ -1,0 +1,109 @@
+---
+title: MDX pages
+sidebar:
+  order: 3
+---
+
+MDX files implement a superset of markdown that allows for JSX to be included in
+markdown files. With MDX files you can make use of the astro component library.
+
+These components are highly stylised. To use them you need to import the
+component before using the HTML style tag to use the element. For example, to
+use the steps component, you would first import the component by adding
+`import { Steps } from '@astrojs/starlight/components';` and then 
+including the tag. These steps could also be written using the steps component
+as follows:
+
+import { Steps } from '@astrojs/starlight/components';
+
+<Steps>
+
+1. Import the component into your MDX file:
+
+   ```js
+   import { Steps } from '@astrojs/starlight/components';
+   ```
+
+2. Wrap `<Steps>` around your ordered list items.
+
+</Steps>
+
+Other useful components include:
+
+- `<Code>` which gives additional control over code blocks, such as importing
+from external files. For example,
+
+```mdx
+import { Code } from '@astrojs/starlight/components';
+import samplecode from '/src/assets/code/sample.py?raw';
+
+<Code code={samplecode} lang="python" title="sample.py" />
+```
+
+which results in,
+
+import { Code } from '@astrojs/starlight/components';
+import samplecode from '/src/assets/code/sample.py?raw';
+
+<Code code={samplecode} lang="python" title="sample.py" />
+
+Importing for external files in not easily done in standard markdown.
+
+- `<CardGrid>` allowing for easy layout of stylised `<Card>` elements. For
+example,
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+<CardGrid>
+  <Card title="This is a card" icon="open-book">
+    Cards can contain arbitrary information.
+  </Card>
+  <Card title="So on and such as" icon="information">
+    Code blocks!
+    ```bash
+    rm -fr bad_layout
+    ```
+  </Card>
+  <LinkCard title="Link cards" href="#"/>
+  <LinkCard title="In grids" href="#"/>
+</CardGrid>
+
+- `<Tabs>` allowing for advanced organisation of data. For example,
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+<Card title="Code must be indented to visually show its structure." icon="forward-slash">
+<Tabs>
+  <TabItem label="Rule">Between any new pair of braces (`{`, `}`), write your code 4 further spaces in from the left.</TabItem>
+  <TabItem label="Explanation">Indentation is incredibly helpful for improving the readability of your code. It shows, at a glance, where different blocks of code are, and where different scopes begin and end. It is important to be consistent with indentation within a project (e.g., don't mix tabs and spaces, use a consistent indentation for each new block) to further improve readability. The Guide suggests 4 spaces, but the actual number may change from developer to developer - 2 is another common number. But each developer or development house should have a specific number and be consistent in the use of that number.</TabItem>
+  <TabItem label="Example">
+    Do:
+    ```c++
+    if (condition)
+    {
+        statement;
+        if (condition)
+        {
+            statement;
+        }
+    }
+    ```
+
+    Don't do:
+    ```c++
+    if (condition)
+    {
+    statement;
+    if (condition)
+    {
+    statement;
+    }
+    }
+    ```
+  </TabItem>
+  <TabItem label="Tip">You can configure your code editor to follow and enforce your indentation settings.</TabItem>
+</Tabs>
+</Card>
+
+The documentation for components is very well done and can be found
+[here](https://starlight.astro.build/components/using-components/).

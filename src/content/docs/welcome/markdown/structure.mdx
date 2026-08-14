@@ -1,0 +1,58 @@
+---
+title: Content structure
+sidebar:
+  order: 1
+---
+
+import { FileTree } from '@astrojs/starlight/components'
+
+Content in Astro uses [Markdown](https://www.markdownguide.org) which is an easy
+to read markup language that abstracts many common text formatting patterns, in
+this case HTML formatting patterns.
+
+The intention of this template is that you should not need to interact with
+styling and should be able to focus on content. To add content to a starlight
+template we manipulate the `src` directory, the following is the directory
+structure of `src` for the following directory:
+
+<FileTree>
+- src/
+  - assets
+    - illustrations
+      - istockphoto.png
+      - michael_gill.png
+  - components
+    - contributor.astro
+    - contributors.astro
+    - maincontributor.astro
+  - content
+    - docs
+      - credits.mdx
+      - index.mdx
+      - style.mdx
+      - welcome
+        - foreword.mdx
+        - markdown
+          - _meta.yml
+          - extensions.mdx
+          - markdown.mdx
+          - sidebars.mdx
+          - structure.mdx
+  - content.config.ts
+  - styles
+     - custom.css
+</FileTree>
+
+The directory `assets` contains static such as pictures. This does can have an
+arbitrary directory structure, so organise this as you see fit. The
+`components` directory contains custom astro components. These components are
+are HTML like tags that are replaced with complex HTML by the template
+preprocessor. It is recommended that you use builtin components whenever
+possible. For `css` files, these can be stored in the `styles` directory and
+linked by adding the file to the `astro.config.mjs` file in the base directory.
+
+Content files are placed in the directory `src/content/docs/`. There should
+only be one index file, which will be the template file used when accessing
+`https://localhost:3001`. Pages can then be accessed by linking to other files
+or by using the sidebar. Sidebars will be discussed in detail 
+[here](/welcome/markdown/sidebars/).
