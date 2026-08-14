@@ -28,6 +28,9 @@ export default defineConfig({
     starlight({
       title: 'Monash University FIT Unit Template',
       social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/orthosquare' }],
+      customCss:[
+        "./src/styles/custom.css",
+      ],
       plugins: [
         starlightAutoSidebar(), 
         starlightLinksValidator({

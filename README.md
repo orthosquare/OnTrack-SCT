@@ -1,49 +1,89 @@
-# Starlight Starter Kit: Basics
+# Welcome
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+This template is intended to be used in Monash University FIT units that utilise
+the OnTrack system. The OnTrack system has been designed to allow you to embed
+a static website created using the standard Astro Starlight static webpage
+generation system. This template is designed to be used out of the box with
+OnTrack.
 
+To use this template, create a fork from this [git repository].
+
+This should give you a file tree similar to:
+
+<FileTree>
+- README.md
+- astro.config.mjs
+- license
+- package-lock.json
+- package.json
+- public/
+- resources/
+- src/
+- assets/
+- components/
+- tsconfig.json
+</FileTree>
+
+## Prerequisites
+
+To use this library you will need to ensure that you have
+[npm](https://www.npmjs.com) correctly installed.
+
+## Installing Astro
+
+Using a terminal, navigate to the cloned directory and run the following command:
+
+```bash
+npm install
 ```
-npm create astro@latest -- --template starlight
+
+This will install Astro and all dependencies to the local directory using the
+`package.json` and `package-lock.json` files.
+
+> [!CAUTION]
+>  Packages obtained through `npm` have been a target for supply chain attacks.
+>  To the best of our abilities we have locked the dependencies to clean versions.
+
+
+## Running the dev server
+
+It is recommended that you test your site by running it as a dev server. This
+can be done with the following command:
+
+```bash
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The site can then be viewed by using a browser to navigate to
+`https://localhost:3000`[^1].
 
-## 🚀 Project Structure
+## Deploying the site
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+To deploy the site, you should run the astro build command.
 
-```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   └── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
+```bash
+npm run build
 ```
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+After running the build command you should see the `dist` directory. Ultimately you
+should have the following first level directory structure:
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+<FileTree>
+- README.md
+- astro.config.mjs
+- dist/
+- license
+- node_modules/
+- package-lock.json
+- package.json/
+- public/
+- resources/
+- src/
+- tsconfig.json
+</FileTree>
 
-Static assets, like favicons, can be placed in the `public/` directory.
+The `dist` directory should now contain a static copy of your site.
 
-## 🧞 Commands
+The remainder of this tutorial is available through the dev server. This file is identical to the `README.MD` file.
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+[^1]: The port used for the dev environment can be set in the file `astro.config.mjs`.

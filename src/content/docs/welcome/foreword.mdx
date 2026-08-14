@@ -4,9 +4,7 @@ sidebar:
   order: 0
 ---
 
-```
-import Aside from '../../../components/Aside.astro';
-```
+import { Aside, FileTree } from '@astrojs/starlight/components';
 
 # Welcome
 
@@ -14,33 +12,25 @@ This template is intended to be used in Monash University FIT units that utilise
 the OnTrack system. The OnTrack system has been designed to allow you to embed
 a static website created using the standard Astro Starlight static webpage
 generation system. This template is designed to be used out of the box with
-with OnTrack.
+OnTrack.
 
-To use this template, fork the template from the this [git repository].
+To use this template, create a fork from this [git repository].
 
-This should give you file tree similar to:
+This should give you a file tree similar to:
 
-```
-.
-├── README.md
-├── astro.config.mjs
-├── license
-├── package-lock.json
-├── package.json
-├── public/
-│   ├── favicon.svg
-│   └── robots.txt
-├── resources/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── content/
-│   ├── content.config.ts
-│   ├── env.d.ts
-│   ├── fonts/
-│   └── styles/
-└── tsconfig.json
-```
+<FileTree>
+- README.md
+- astro.config.mjs
+- license
+- package-lock.json
+- package.json
+- public/
+- resources/
+- src/
+- assets/
+- components/
+- tsconfig.json
+</FileTree>
 
 ## Prerequisites
 
@@ -58,12 +48,10 @@ npm install
 This will install Astro and all dependencies to the local directory using the
 `package.json` and `package-lock.json` files.
 
-```
-<Aside type="caution"
+<Aside type="caution">
   Packages obtained through `npm` have been a target for supply chain attacks.
   To the best of our abilities we have locked the dependencies to clean versions.
 </Aside>
-```
 
 ## Running the dev server
 
@@ -74,6 +62,9 @@ can be done with the following command:
 npm run dev
 ```
 
+The site can then be viewed by using a browser to navigate to
+`https://localhost:3000`[^1].
+
 ## Deploying the site
 
 To deploy the site, you should run the astro build command.
@@ -82,22 +73,25 @@ To deploy the site, you should run the astro build command.
 npm run build
 ```
 
-After running the build command you should see the `dev` folder. Ultimately you
+After running the build command you should see the `dist` directory. Ultimately you
 should have the following first level directory structure:
 
-```
-.
-├── README.md
-├── astro.config.mjs
-├── dist/
-├── license
-├── node_modules/
-├── package-lock.json
-├── package.json/
-├── public/
-├── resources/
-├── src/
-└── tsconfig.json
-```
+<FileTree>
+- README.md
+- astro.config.mjs
+- dist/
+- license
+- node_modules/
+- package-lock.json
+- package.json/
+- public/
+- resources/
+- src/
+- tsconfig.json
+</FileTree>
 
-The `dev` directory should now contain a static copy of your site.
+The `dist` directory should now contain a static copy of your site.
+
+The remainder of this tutorial is available through the dev server. This file is identical to the `README.MD` file.
+
+[^1]: The port used for the dev environment can be set in the file `astro.config.mjs`.
