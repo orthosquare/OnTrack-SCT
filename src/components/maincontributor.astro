@@ -26,7 +26,7 @@ const { name, affiliation, desc, imgUrl, tag, twitter, website } = Astro.props;
   <p class="tag">{tag}</p>
   <Image
     height="200"
-    src={import(`../assets/illustrations/${imgUrl}.png`)}
+    src={import(`../assets/images/${imgUrl}.png`)}
     alt={"Picture of of " + name}
   />
   <p>{desc}</p>

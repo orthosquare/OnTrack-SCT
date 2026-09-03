@@ -6,7 +6,7 @@ a static website created using the standard Astro Starlight static webpage
 generation system. This template is designed to be used out of the box with
 OnTrack.
 
-To use this template, create a fork from this [git repository].
+To use this template, create a fork from this [git repository](#).
 
 This should give you a file tree similar to:
 

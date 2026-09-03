@@ -2,7 +2,7 @@
 import { Icon } from "@astrojs/starlight/components";
 import { Image } from "astro:assets";
 
-const { name, url, imgUrl, avatar_url } = Astro.props;
+const { name, url, imgUrl } = Astro.props;
 ---
 
 <style>
@@ -28,7 +28,7 @@ const { name, url, imgUrl, avatar_url } = Astro.props;
 </style>
 
 <a href={url} class="contributor-link">
-  <Image src={import(`../assets/illustrations/${imgUrl}.png`)} alt={name} width={50} height={50} />
+  <Image src={import(`../assets/images/${imgUrl}.png`)} alt={name} width={50} height={50} />
   <span style=""></span>
   <p>{name}</p>
   <span style="flex-grow: 1"></span>

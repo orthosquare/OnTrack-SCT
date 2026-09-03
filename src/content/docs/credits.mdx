@@ -11,9 +11,23 @@ template: splash
   #     link: https://github.com/astronaut/my-project
   #     icon: external
 ---
-import  Contributors  from '../../components/contributors.astro';
+import Contributor from '../../components/contributor.astro';
+import MainContributor from '../../components/maincontributor.astro';
+import { CardGrid } from '@astrojs/starlight/components';
 
-<Contributors/>
+
+<CardGrid>
+  <MainContributor
+    name="Michael Gill"
+    affiliation="Monash University"
+    imgUrl="michael_gill"
+    tag="Primary Template Maintainer"
+    desc="Michael Maintains this template. You should replace this card with the CE and UC... Etc."
+    website="https://www.linkedin.com/in/michael-gill-628740241/"
+  />
+</CardGrid>
+
+<Contributor name="Andrew Cain" url="https://supervisorconnect.it.monash.edu/supervisors/andrew-cain" imgUrl="istockphoto" />
 
 <div style="margin: auto; text-align: center; max-width: 600px; font-family: 'antique-olive';">
   This template is derrived from the **Programmer's Field Guide**. Your trusty companion as you embark on your journey to understand the world of programming.
