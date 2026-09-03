@@ -10,7 +10,7 @@ To use this template, create a fork from this [git repository](#).
 
 This should give you a file tree similar to:
 
-<FileTree>
+```
 - README.md
 - astro.config.mjs
 - license
@@ -22,7 +22,7 @@ This should give you a file tree similar to:
 - assets/
 - components/
 - tsconfig.json
-</FileTree>
+```
 
 ## Prerequisites
 
@@ -68,7 +68,7 @@ npm run build
 After running the build command you should see the `dist` directory. Ultimately you
 should have the following first level directory structure:
 
-<FileTree>
+```
 - README.md
 - astro.config.mjs
 - dist/
@@ -80,7 +80,7 @@ should have the following first level directory structure:
 - resources/
 - src/
 - tsconfig.json
-</FileTree>
+```
 
 The `dist` directory should now contain a static copy of your site.
 
