@@ -1,10 +1,10 @@
 # Welcome
 
-This template is intended to be used in Monash University FIT units that utilise
-the OnTrack system. The OnTrack system has been designed to allow you to embed
-a static website created using the standard Astro Starlight static webpage
-generation system. This template is designed to be used out of the box with
-OnTrack.
+This repository is intended to be used as a static content template for the
+[OnTrack](https://github.com/doubtfire-lms). The OnTrack system has been
+designed to allow you to embed static websites created using the standard
+Astro Starlight static webpage generation system. This template is designed to
+be used out of the box.
 
 To use this template, create a fork from this [git repository](#).
 
@@ -65,8 +65,8 @@ To deploy the site, you should run the astro build command.
 npm run build
 ```
 
-After running the build command you should see the `dist` directory. Ultimately you
-should have the following first level directory structure:
+After running the build command you should see the `dist` directory. Ultimately
+you should have the following first level directory structure:
 
 ```
 - README.md

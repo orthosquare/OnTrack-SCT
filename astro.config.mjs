@@ -42,6 +42,20 @@ export default defineConfig({
           label: 'Welcome',
           items: [{ autogenerate: { directory: 'welcome' } }],
         },
+        // {
+        //   label: 'Welcome',
+        //   items: [
+        //     { slug: 'welcome/foreword' }, 
+        //     { label: 'Markdown', 
+        //       items: [
+        //         { slug: 'welcome/markdown/structure' },
+        //         { slug: 'welcome/markdown/markdown' },
+        //         { slug: 'welcome/markdown/extensions' },
+        //         { slug: 'welcome/markdown/sidebars' },
+        //       ],
+        //     },
+        //   ],
+        // },
       ],
     }),
   ],
