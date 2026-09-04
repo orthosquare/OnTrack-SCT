@@ -55,7 +55,7 @@ npm run dev
 ```
 
 The site can then be viewed by using a browser to navigate to
-`https://localhost:3000`[^1].
+`https://localhost:3001`[^1].
 
 ## Deploying the site
 
@@ -84,6 +84,9 @@ should have the following first level directory structure:
 
 The `dist` directory should now contain a static copy of your site.
 
-The remainder of this tutorial is available through the dev server. This file is identical to the `README.MD` file.
+The remainder of this tutorial is available through the dev server. This file
+contains the same information as `foreword.mdx` file.
 
-[^1]: The port used for the dev environment can be set in the file `astro.config.mjs`.
+[^1]: The port used for the dev environment can be set in the file
+`astro.config.mjs`. If you are using `devcontainer`, you may also need to
+the setting there.
