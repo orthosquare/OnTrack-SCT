@@ -9,6 +9,7 @@ import remarkMath from 'remark-math';
 import rehypeKaTeX from 'rehype-katex';
 // Link validation support
 import starlightLinksValidator from 'starlight-links-validator';
+import embed from 'astro-embed/integration';
 
 // https://astro.build/config
 export default defineConfig({
@@ -25,6 +26,7 @@ export default defineConfig({
     }),
   },
   integrations: [
+    embed(),
     starlight({
       title: 'OnTrack Content Template',
       social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/orthosquare' }],

@@ -7,6 +7,11 @@ sidebar:
 MDX files implement a superset of markdown that allows for JSX to be included in
 markdown files. With MDX files you can make use of the astro component library.
 
+The documentation for components is very well done and can be found
+[here](https://starlight.astro.build/components/using-components/).
+
+## Steps Component
+
 These components are highly stylised. To use them you need to import the
 component before using the HTML style tag to use the element. For example, to
 use the steps component, you would first import the component by adding
@@ -15,6 +20,7 @@ including the tag. These steps could also be written using the steps component
 as follows:
 
 import { Steps } from '@astrojs/starlight/components';
+import YouTube from '/src/components/YouTube.astro';
 
 <Steps>
 
@@ -28,9 +34,9 @@ import { Steps } from '@astrojs/starlight/components';
 
 </Steps>
 
-Other useful components include:
+## Code Component
 
-- `<Code>` which gives additional control over code blocks, such as importing
+`<Code>` which gives additional control over code blocks, such as importing
 from external files. For example,
 
 ```mdx
@@ -49,7 +55,9 @@ import samplecode from '/src/assets/code/sample.py?raw';
 
 Importing for external files in not easily done in standard markdown.
 
-- `<CardGrid>` allowing for easy layout of stylised `<Card>` elements. For
+## Card Grid Component
+
+`<CardGrid>` allowing for easy layout of stylised `<Card>` elements. For
 example,
 
 import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
@@ -68,7 +76,9 @@ import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
   <LinkCard title="In grids" href=""/>
 </CardGrid>
 
-- `<Tabs>` allowing for advanced organisation of data. For example,
+## Tabs Component
+
+`<Tabs>` allowing for advanced organisation of data. For example,
 
 import { Tabs, TabItem } from '@astrojs/starlight/components';
 
@@ -105,5 +115,11 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
 </Tabs>
 </Card>
 
-The documentation for components is very well done and can be found
-[here](https://starlight.astro.build/components/using-components/).
+## YouTube Component
+
+You can embed video using the YouTube component. Add `import YouTube from '/src/components/YouTube.astro';` see the example on this page for how to use the component. Set the `id` to the id of the YouTube video to embed.
+
+<div class="not-content">
+  <YouTube id="9yXzmzak1-8" params="fs=1&modestbranding=1&rel=0"/>
+</div>
+<div class="caption">Credit to Dean Mascitti.</div><br/>
