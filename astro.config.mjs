@@ -26,7 +26,7 @@ export default defineConfig({
   },
   integrations: [
     starlight({
-      title: 'Monash University FIT Unit Template',
+      title: 'OnTrack Content Template',
       social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/orthosquare' }],
       customCss:[
         "./src/styles/custom.css",
