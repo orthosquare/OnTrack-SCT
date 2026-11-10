@@ -44,71 +44,15 @@
   font-family: "antique-olive", sans-serif;
 }
 
-[data-has-hero] .page {
-  /* simple, light dots repeating */
-  --dot-bg: white;
-  --dot-color: rgba(212, 212, 212, 0.449);
-  --dot-size: 1.5px;
-  --dot-space: 12px;
-
-  background: linear-gradient(215deg, #b3c4b6, transparent 20%),
-    linear-gradient(125deg, #b3c4b6, transparent 20%),
-    linear-gradient(15deg, #b3c4b6, transparent 20%),
-    /* radial-gradient(#b3c4b6, transparent 40%) no-repeat -60vw -40vh / 105vw
-      200vh,
-    radial-gradient(#b3c4b6, transparent 65%) no-repeat 50% calc(100% + 20rem) /
-      60rem 30rem */
-      linear-gradient(
-        90deg,
-        var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
-        transparent 1%
-      )
-      center / var(--dot-space) var(--dot-space),
-    linear-gradient(
-        var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
-        transparent 1%
-      )
-      center / var(--dot-space) var(--dot-space),
-    var(--dot-color);
-}
-
-[data-has-hero][data-theme="dark"] .page {
-  /* simple, light dots repeating */
-  --dot-bg: #258100;
-  --dot-color: #cccccc(9, 8, 8, 0.449);
-  --dot-size: 1.5px;
-  --dot-space: 12px;
-
-  img {
-    opacity: 0.9;
-  }
-
-  background: linear-gradient(215deg, #82907f, transparent 20%),
-    linear-gradient(125deg, #82907f, transparent 20%),
-    linear-gradient(15deg, #82907f, transparent 20%),
-    /* radial-gradient(#b3c4b6, transparent 40%) no-repeat -60vw -40vh / 105vw
-      200vh,
-    radial-gradient(#b3c4b6, transparent 65%) no-repeat 50% calc(100% + 20rem) /
-      60rem 30rem */
-      linear-gradient(
-        90deg,
-        var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
-        transparent 1%
-      )
-      center / var(--dot-space) var(--dot-space),
-    linear-gradient(
-        var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
-        transparent 1%
-      )
-      center / var(--dot-space) var(--dot-space),
-    var(--dot-color);
-}
-
-[data-has-hero] header {
+/* [data-has-hero] header {
   border-bottom: 1px solid transparent;
   background-color: transparent;
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
+} */
+
+header {
+  display: none;
 }
 
 @font-face {
@@ -303,6 +247,23 @@ img {
 }
 
 /* --- END:   Review changes: Delete style contents once done reviewing ------*/
+
+
+/* .sidebar-content {
+  display: none;
+} */
+
+.sidebar-pane {
+  top: 0;
+}
+
+.main-frame {
+  padding-top: 0;
+}
+
+mobile-starlight-toc > nav {
+  top: 0;
+}
 
 /* --- START: Syntax Box ------*/
 aside[aria-label="Syntax"] {
@@ -931,3 +892,109 @@ body .accordion__item {
 /* END:   CUSTOM STYLES                        */
 /* - Don't delete this section                 */
 /* ------------------------------------------- */
+
+.page {
+  padding: 4rem 25px;
+}
+
+/* Let the main content use the full width on smaller screens. */
+@media (max-width: 72rem) {
+  .content-panel > .sl-container {
+    width: 100%;
+    max-width: none !important;
+  }
+}
+
+
+
+/* Keep the desktop "On this page" sidebar on the right. */
+@media (min-width: 72rem) {
+  .right-sidebar-container {
+    width: 30vw !important;
+  }
+
+  .main-pane {
+    width: calc(80vw) !important;
+  }
+}
+
+/* Keep the mobile "On this page" bar pinned to the top at every width as we have no header. */
+mobile-starlight-toc nav {
+  top: 0 !important;
+  inset-inline-start: var(--sl-content-inline-start, 0rem) !important;
+  width: calc(100% - var(--sl-content-inline-start, 0rem)) !important;
+}
+
+/* Leave room for the hamburger menu button while the sidebar is closed. */
+mobile-starlight-toc nav summary {
+  height: 65px;
+  padding-left: 65px !important;
+}
+body[data-mobile-menu-expanded] mobile-starlight-toc nav summary {
+  padding-left: 25px !important;
+}
+
+@media (min-width: 50rem) {
+  html[data-has-sidebar] {
+    --sl-content-inline-start: 0rem;
+  }
+
+  body[data-mobile-menu-expanded] {
+    --sl-content-inline-start: var(--sl-sidebar-width);
+  }
+
+  /* Keep the sidebar collapsed by default. */
+  .sidebar-pane {
+    visibility: hidden;
+    transform: translateX(-100%);
+  }
+
+  body[data-mobile-menu-expanded] .sidebar-pane {
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  /* Keep Starlight's menu button available on desktop. */
+  starlight-menu-button {
+    display: block !important;
+  }
+
+  .main-frame {
+    padding-inline-start: 0 !important;
+  }
+
+  /* Shift the page content over while the sidebar is open. */
+  body[data-mobile-menu-expanded] .page {
+    padding-left: 300px;
+  }
+}
+
+/* Offset table of contents to give room to the hamburger menu button. */
+.sidebar-pane {
+  top: 0;
+  padding-top: 50px;
+}
+
+/* Keep the menu button visible and positioned in the top-left corner. */
+starlight-menu-button button {
+  display: flex !important;
+  left: calc((var(--sl-nav-height) - var(--sl-menu-button-size)) / 2);
+  background-color: var(--sl-color-accent-high);
+}
+
+/* Minimize with header. Keeps the window toggles for search and screen brightness. */
+/* Comment out if you do not want this functionality */
+
+starlight-menu-button button {
+  margin-top: 60px;
+}
+
+header {
+  display: flex;
+}
+
+.sidebar-content {
+  margin-top: 50px;
+}
+
+/* END: minimize with header */
